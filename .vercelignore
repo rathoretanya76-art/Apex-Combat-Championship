@@ -1,0 +1,9 @@
+# Files to exclude from Vercel deployment upload
+node_modules
+.next
+.env*.local
+*.log
+.DS_Store
+README.md
+MOCK_DATABASE.md
+apphosting.yaml

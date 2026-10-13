@@ -1,0 +1,184 @@
+{
+  "placeholderImages": [
+    {
+      "id": "video-thumb",
+      "description": "Apex Combat Championship cage fight highlight",
+      "imageUrl": "https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "cage fight"
+    },
+    {
+      "id": "event-poster-1",
+      "description": "Apex 28 Supremacy Championship Fight Poster",
+      "imageUrl": "/assets/images/event-poster.jpg",
+      "imageHint": "fight poster"
+    },
+    {
+      "id": "home-gallery-1",
+      "description": "Apex Championship Fighter in Stance",
+      "imageUrl": "/assets/images/event-poster.jpg",
+      "imageHint": "mma fighter",
+      "group": "home-gallery"
+    },
+    {
+      "id": "home-gallery-2",
+      "description": "A focused combat athlete training with weights",
+      "imageUrl": "/assets/images/fighter-training.png",
+      "imageHint": "fighter training",
+      "group": "home-gallery"
+    },
+    {
+      "id": "home-gallery-3",
+      "description": "Intense championship staredown inside the cage",
+      "imageUrl": "/assets/images/fighter-staredown.png",
+      "imageHint": "fighter staredown",
+      "group": "home-gallery"
+    },
+    {
+      "id": "home-gallery-4",
+      "description": "A powerful high-kick strike during an Apex main card",
+      "imageUrl": "/assets/images/kickboxing-match.png",
+      "imageHint": "kickboxing match",
+      "group": "home-gallery"
+    },
+    {
+      "id": "event-poster-2",
+      "description": "Apex 27 Vendetta Fight Poster",
+      "imageUrl": "/assets/images/event-poster.jpg",
+      "imageHint": "fight poster"
+    },
+    {
+      "id": "event-poster-3",
+      "description": "Apex 26 Collision Course Fight Poster",
+      "imageUrl": "/assets/images/event-poster.jpg",
+      "imageHint": "fight poster"
+    },
+    {
+      "id": "event-poster-4",
+      "description": "Apex 25 Genesis Legacy Fight Poster",
+      "imageUrl": "/assets/images/event-poster.jpg",
+      "imageHint": "fight poster"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Fighter getting hands wrapped in locker room",
+      "imageUrl": "/assets/images/fighter-prep.png",
+      "imageHint": "fighter preparation",
+      "group": "gallery"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Overhead panoramic shot of the Apex combat cage",
+      "imageUrl": "/assets/images/mma-octagon.png",
+      "imageHint": "mma octagon",
+      "group": "gallery"
+    },
+    {
+      "id": "gallery-3",
+      "description": "A striker training power hooks on heavy bag",
+      "imageUrl": "/assets/images/1.png",
+      "imageHint": "boxer training",
+      "group": "gallery"
+    },
+    {
+      "id": "gallery-4",
+      "description": "Championship grappling match on the canvas",
+      "imageUrl": "https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "grappling match",
+      "group": "gallery"
+    },
+    {
+      "id": "gallery-5",
+      "description": "World champion raising the Apex gold belt",
+      "imageUrl": "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "champion fighter",
+      "group": "gallery"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Sold-out stadium crowd at an Apex fight night",
+      "imageUrl": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "sports crowd",
+      "group": "gallery"
+    },
+    {
+      "id": "gallery-7",
+      "description": "Combat leather gloves resting on the canvas",
+      "imageUrl": "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "boxing glove",
+      "group": "gallery"
+    },
+    {
+      "id": "gallery-8",
+      "description": "Spectacular switch kick landed in the title bout",
+      "imageUrl": "/assets/images/kickboxing-match.png",
+      "imageHint": "kickboxing match",
+      "group": "gallery"
+    },
+    {
+      "id": "event-marathon",
+      "description": "Apex Endurance Athletic Series Poster",
+      "imageUrl": "/assets/images/event_MARAthon.jpeg",
+      "imageHint": "marathon poster"
+    },
+    {
+      "id": "contact-map",
+      "description": "Apex Headquarters and Arena Locator",
+      "imageUrl": "/assets/images/event-poster.jpg",
+      "imageHint": "city map"
+    },
+    {
+      "id": "sponsor-1",
+      "description": "Venum Performance Gear",
+      "imageUrl": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=300&q=80",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "sponsor-2",
+      "description": "Monster Energy Pro",
+      "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "sponsor-3",
+      "description": "Under Armour Combat",
+      "imageUrl": "https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?auto=format&fit=crop&w=300&q=80",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "sponsor-4",
+      "description": "Crypto.com Global",
+      "imageUrl": "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=300&q=80",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "sponsor-5",
+      "description": "Everlast Championship Equipment",
+      "imageUrl": "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=300&q=80",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "why-apex-1",
+      "description": "Elite world-class mixed martial arts competition",
+      "imageUrl": "/assets/images/about-us.jpg",
+      "imageHint": "professional fighting"
+    },
+    {
+      "id": "why-apex-2",
+      "description": "Strict regulatory compliance and unified rules judging",
+      "imageUrl": "/assets/images/about-us-extra.jpg",
+      "imageHint": "professional referee"
+    },
+    {
+      "id": "why-apex-3",
+      "description": "Unprecedented purse distributions and global exposure",
+      "imageUrl": "/assets/images/brand-story.jpg",
+      "imageHint": "fighter opportunity"
+    },
+    {
+      "id": "why-apex-4",
+      "description": "Honor, sportsmanship, and martial discipline",
+      "imageUrl": "/assets/images/shop-bg.jpg",
+      "imageHint": "martial arts discipline"
+    }
+  ]
+}
