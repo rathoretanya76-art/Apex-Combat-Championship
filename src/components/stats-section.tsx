@@ -37,7 +37,7 @@ const stats: Stat[] = [
   },
 ];
 
-function useCountUp(end: number, duration: number = 2000, isVisible: boolean = false) {
+function useCountUp(end: number, duration: number = 1800, isVisible: boolean = false) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -49,8 +49,10 @@ function useCountUp(end: number, duration: number = 2000, isVisible: boolean = f
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
+      // Silky cubic ease-out curve
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
       
-      setCount(Math.floor(progress * end));
+      setCount(Math.floor(easeProgress * end));
 
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
@@ -76,7 +78,7 @@ export function StatsSection() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.15 }
     );
 
     if (sectionRef.current) {
@@ -102,7 +104,7 @@ export function StatsSection() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
           {stats.map((stat, index) => (
-            <StatCard key={stat.label} stat={stat} isVisible={isVisible} delay={index * 100} />
+            <StatCard key={stat.label} stat={stat} isVisible={isVisible} delay={index * 80} />
           ))}
         </div>
       </div>
@@ -111,7 +113,7 @@ export function StatsSection() {
 }
 
 function StatCard({ stat, isVisible, delay }: { stat: Stat; isVisible: boolean; delay: number }) {
-  const count = useCountUp(stat.value, 2000, isVisible);
+  const count = useCountUp(stat.value, 1800, isVisible);
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
@@ -123,11 +125,11 @@ function StatCard({ stat, isVisible, delay }: { stat: Stat; isVisible: boolean; 
 
   return (
     <div 
-      className={`text-center group transition-all duration-700 ${
-        shouldAnimate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`text-center group transition-all duration-500 transform-gpu ${
+        shouldAnimate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
     >
-      <div className="bg-card border-2 border-primary/20 rounded-lg p-6 md:p-8 transition-all duration-300 group-hover:border-primary group-hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] relative overflow-hidden">
+      <div className="bg-card border-2 border-primary/20 rounded-lg p-6 md:p-8 transition-all duration-300 group-hover:border-primary group-hover:shadow-[0_0_25px_hsl(var(--primary)/0.4)] relative overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         

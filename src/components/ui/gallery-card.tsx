@@ -33,7 +33,7 @@ const GalleryCard = React.forwardRef<HTMLDivElement, GalleryCardProps>(
           src={src}
           alt={alt}
           fill
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:opacity-80"
+          className="object-cover transform-gpu will-change-transform transition-transform duration-500 ease-out group-hover:scale-105 group-hover:opacity-90"
         />
         
         {/* Overlay */}

@@ -125,25 +125,31 @@
   }
   html {
     width: 100%;
+    scroll-behavior: auto;
+  }
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
   }
   body {
     @apply bg-background text-foreground;
     width: 100%;
+    overflow-x: hidden;
   }
   
   .container {
     @apply px-4 sm:px-6 lg:px-8;
-  }
-
-  /* Smooth scroll snap for sections */
-  @media (min-width: 768px) {
-    .scroll-snap-container {
-      scroll-snap-type: y proximity;
-    }
-    .scroll-snap-section {
-      scroll-snap-align: start;
-      scroll-snap-stop: normal;
-    }
   }
 }
 
@@ -155,16 +161,17 @@
     @apply transition-shadow duration-300;
   }
   .glow-on-hover:hover {
-    box-shadow: 0 0 25px 5px hsl(var(--primary) / 0.8), 0 0 10px 0px hsl(var(--primary) / 0.6);
+    box-shadow: 0 0 20px 3px hsl(var(--primary) / 0.6), 0 0 8px 0px hsl(var(--primary) / 0.4);
   }
   .fade-in-on-scroll {
     opacity: 0;
-    transform: translateY(50px) scale(0.98);
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(20px);
+    will-change: opacity, transform;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .fade-in-on-scroll.is-visible {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
   
 
@@ -268,27 +275,25 @@
   }
 
   .strike-animation {
-    transition: all 0.1s ease-out;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .strike-animation:active {
-    transform: scale(0.95);
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.8);
+    transform: scale(0.97);
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.6);
   }
 
   .aggressive-glow {
     box-shadow: 
-      0 0 20px hsl(var(--primary) / 0.4),
-      0 0 40px hsl(var(--primary) / 0.2),
-      inset 0 0 20px hsl(var(--primary) / 0.1);
+      0 0 15px hsl(var(--primary) / 0.35),
+      0 0 30px hsl(var(--primary) / 0.15);
+    transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .aggressive-glow:hover {
     box-shadow: 
-      0 0 30px hsl(var(--primary) / 0.6),
-      0 0 60px hsl(var(--primary) / 0.3),
-      0 0 90px hsl(var(--primary) / 0.2),
-      inset 0 0 30px hsl(var(--primary) / 0.2);
+      0 0 25px hsl(var(--primary) / 0.55),
+      0 0 50px hsl(var(--primary) / 0.25);
   }
 
   /* Mobile Optimizations */

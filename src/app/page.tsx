@@ -150,71 +150,68 @@ export default function Home() {
       </ZoomParallax>
 
       {/* Stats Section */}
-      <ScrollReveal direction="up" delay={0.2}>
+      <ScrollReveal direction="up" delay={0.1}>
         <StatsSection />
       </ScrollReveal>
 
       {/* About Apex */}
-      <ScrollReveal direction="fade">
-        <section className="py-16 md:py-24 relative">
-          <CageOverlay intensity="subtle" />
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <ScrollReveal direction="left" delay={0.2}>
-                <div className="text-center md:text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-headline uppercase tracking-widest font-bold mb-4">
-                    <Flame className="w-4 h-4 text-primary" /> The Championship Heritage
-                  </div>
-                  <h2 className="font-headline text-3xl md:text-5xl font-black uppercase tracking-wider text-primary combat-shadow">
-                    The Apex Championship Legacy
-                  </h2>
-                  <Separator className="w-24 h-1 mx-auto md:mx-0 my-6 bg-gradient-to-r from-primary to-secondary" />
-                  <p className="text-xl md:text-2xl text-balance text-foreground leading-relaxed font-semibold mb-4">
-                    <span className="text-primary font-bold">Apex Combat Championship</span> is where warriors become global legends.
-                  </p>
-                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-                    We don&apos;t just host fights—we forge champions. Built on a foundation of integrity, discipline, and respect, Apex is the ultimate proving ground for the world&apos;s most elite combat athletes.
-                  </p>
-                  <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <Button asChild variant="outline" className="border-primary/50 text-white hover:bg-primary/20">
-                      <Link href="/about">
-                        Meet Our Leadership & Story <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
+      <section className="py-16 md:py-24 relative">
+        <CageOverlay intensity="subtle" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal direction="left" delay={0.15}>
+              <div className="text-center md:text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-headline uppercase tracking-widest font-bold mb-4">
+                  <Flame className="w-4 h-4 text-primary" /> The Championship Heritage
                 </div>
-              </ScrollReveal>
-              <ScrollReveal direction="right" delay={0.3}>
-                <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl shadow-primary/30 border-2 border-primary/20 group">
-                  <Image
-                    src="/assets/images/brand-story.jpg"
-                    alt="Apex Combat Championship Brand Story"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md rounded-lg border border-white/10">
-                    <p className="text-white font-headline text-xl font-bold uppercase tracking-wider">
-                      Apex Global Sports & Entertainment
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Setting global standards for fighter longevity, safety & athletic supremacy.
-                    </p>
-                  </div>
+                <h2 className="font-headline text-3xl md:text-5xl font-black uppercase tracking-wider text-primary combat-shadow">
+                  The Apex Championship Legacy
+                </h2>
+                <Separator className="w-24 h-1 mx-auto md:mx-0 my-6 bg-gradient-to-r from-primary to-secondary" />
+                <p className="text-xl md:text-2xl text-balance text-foreground leading-relaxed font-semibold mb-4">
+                  <span className="text-primary font-bold">Apex Combat Championship</span> is where warriors become global legends.
+                </p>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+                  We don&apos;t just host fights—we forge champions. Built on a foundation of integrity, discipline, and respect, Apex is the ultimate proving ground for the world&apos;s most elite combat athletes.
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                  <Button asChild variant="outline" className="border-primary/50 text-white hover:bg-primary/20">
+                    <Link href="/about">
+                      Meet Our Leadership & Story <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
                 </div>
-              </ScrollReveal>
-            </div>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.25}>
+              <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl shadow-primary/30 border-2 border-primary/20 group">
+                <Image
+                  src="/assets/images/brand-story.jpg"
+                  alt="Apex Combat Championship Brand Story"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md rounded-lg border border-white/10">
+                  <p className="text-white font-headline text-xl font-bold uppercase tracking-wider">
+                    Apex Global Sports & Entertainment
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Setting global standards for fighter longevity, safety & athletic supremacy.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
 
       {/* Upcoming Event Highlight */}
-      <ScrollReveal direction="scale" delay={0.1}>
-        <section className="py-16 md:py-24 bg-card relative overflow-hidden">
-          <CageOverlay intensity="medium" />
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <ScrollReveal direction="left" delay={0.3}>
+      <section className="py-16 md:py-24 bg-card relative overflow-hidden">
+        <CageOverlay intensity="medium" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal direction="left" delay={0.15}>
                 <div className="text-center md:text-left">
                   <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-4">
                     <span className="text-primary font-headline text-sm uppercase tracking-widest font-bold flex items-center gap-2">
@@ -281,156 +278,145 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </ScrollReveal>
 
       {/* Divisions Section */}
-      <ScrollReveal direction="up" delay={0.1}>
-        <section className="py-16 md:py-24 bg-black">
-          <div className="container mx-auto px-4">
-             <ScrollReveal direction="scale" delay={0.2}>
-               <h2 className="text-center font-headline text-3xl md:text-5xl font-bold uppercase tracking-wider text-primary">
-                 Our Combat Divisions
-               </h2>
-               <Separator className="w-24 h-1 mx-auto my-6 bg-primary" />
-               <p className="text-center text-muted-foreground text-lg max-w-2xl mx-auto mb-10">
-                 Explore elite combat divisions sanctioned under international athletic regulations.
-               </p>
-             </ScrollReveal>
-            <StaggerContainer staggerDelay={0.12} className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {divisionCards.map((division) => (
-                <StaggerItem key={division.name} className="h-[450px]">
-                  <DivisionCard
-                    imageUrl={division.imageUrl}
-                    name={division.name}
-                    icon={division.icon}
-                    description={division.stats}
-                    href={`/fighters?division=${encodeURIComponent(division.name)}`}
-                    accentColor="0 84.2% 60.2%"
-                  />
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </section>
-      </ScrollReveal>
+      <section className="py-16 md:py-24 bg-black">
+        <div className="container mx-auto px-4">
+           <ScrollReveal direction="up" delay={0.1}>
+             <h2 className="text-center font-headline text-3xl md:text-5xl font-bold uppercase tracking-wider text-primary">
+               Our Combat Divisions
+             </h2>
+             <Separator className="w-24 h-1 mx-auto my-6 bg-primary" />
+             <p className="text-center text-muted-foreground text-lg max-w-2xl mx-auto mb-10">
+               Explore elite combat divisions sanctioned under international athletic regulations.
+             </p>
+           </ScrollReveal>
+          <StaggerContainer staggerDelay={0.06} className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {divisionCards.map((division) => (
+              <StaggerItem key={division.name} className="h-[450px]">
+                <DivisionCard
+                  imageUrl={division.imageUrl}
+                  name={division.name}
+                  icon={division.icon}
+                  description={division.stats}
+                  href={`/fighters?division=${encodeURIComponent(division.name)}`}
+                  accentColor="0 84.2% 60.2%"
+                />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
 
       {/* Why Apex Section */}
-      <ScrollReveal direction="up" delay={0.1}>
-        <section className="py-16 md:py-24 relative">
-          <CageOverlay intensity="subtle" />
-          <div className="container mx-auto px-4 relative z-10">
-            <ScrollReveal direction="scale" delay={0.2}>
-              <h2 className="text-center font-headline text-3xl md:text-5xl font-black uppercase tracking-wider text-primary combat-shadow-strong">The Apex Difference</h2>
-              <Separator className="w-32 h-1 mx-auto my-6 bg-gradient-to-r from-transparent via-primary to-transparent" />
-              <p className="text-center text-muted-foreground text-lg max-w-3xl mx-auto mb-12">
-                We don&apos;t compromise. We don&apos;t settle. We set the standard for combat sports excellence.
-              </p>
-            </ScrollReveal>
-            <StaggerContainer staggerDelay={0.15} className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {whyApex.map((item, index) => (
-                <StaggerItem key={index} className="h-96">
-                  <FeatureCard
-                    imageUrl={whyApexImages[index]?.imageUrl || '/assets/images/hero-bg.jpg'}
-                    imageAlt={item.title}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                  />
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </section>
-      </ScrollReveal>
+      <section className="py-16 md:py-24 relative">
+        <CageOverlay intensity="subtle" />
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="text-center font-headline text-3xl md:text-5xl font-black uppercase tracking-wider text-primary combat-shadow-strong">The Apex Difference</h2>
+            <Separator className="w-32 h-1 mx-auto my-6 bg-gradient-to-r from-transparent via-primary to-transparent" />
+            <p className="text-center text-muted-foreground text-lg max-w-3xl mx-auto mb-12">
+              We don&apos;t compromise. We don&apos;t settle. We set the standard for combat sports excellence.
+            </p>
+          </ScrollReveal>
+          <StaggerContainer staggerDelay={0.08} className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyApex.map((item, index) => (
+              <StaggerItem key={index} className="h-96">
+                <FeatureCard
+                  imageUrl={whyApexImages[index]?.imageUrl || '/assets/images/hero-bg.jpg'}
+                  imageAlt={item.title}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
 
       {/* Gallery Preview */}
-      <ScrollReveal direction="up" delay={0.1}>
-        <section className="py-16 md:py-24 bg-card/50">
-          <div className="container mx-auto px-4">
-            <ScrollReveal direction="scale" delay={0.2}>
-              <h2 className="text-center font-headline text-3xl md:text-5xl font-bold uppercase tracking-wider text-primary">Combat Gallery</h2>
-              <Separator className="w-24 h-1 mx-auto my-6 bg-primary" />
-              <p className="text-center text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-                Unfiltered intensity captured in the heat of battle.
-              </p>
-            </ScrollReveal>
-            <StaggerContainer staggerDelay={0.08} className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
-              {galleryImages.map((image, i) => (
-                <StaggerItem key={image.id} className={` ${i >= 2 ? 'hidden md:block' : ''}`}>
-                  <GalleryCard
-                     src={image.imageUrl}
-                     alt={image.description}
-                     caption={image.description}
-                     aspectRatio="video"
-                     className="h-full w-full"
-                  />
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-            <div className="text-center mt-8">
-              <Button asChild variant="outline" size="lg" className="border-primary/40 text-white hover:bg-primary/20">
-                <Link href="/gallery-contact">View Full Gallery & Media Archive</Link>
-              </Button>
-            </div>
+      <section className="py-16 md:py-24 bg-card/50">
+        <div className="container mx-auto px-4">
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="text-center font-headline text-3xl md:text-5xl font-bold uppercase tracking-wider text-primary">Combat Gallery</h2>
+            <Separator className="w-24 h-1 mx-auto my-6 bg-primary" />
+            <p className="text-center text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
+              Unfiltered intensity captured in the heat of battle.
+            </p>
+          </ScrollReveal>
+          <StaggerContainer staggerDelay={0.06} className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+            {galleryImages.map((image, i) => (
+              <StaggerItem key={image.id} className={` ${i >= 2 ? 'hidden md:block' : ''}`}>
+                <GalleryCard
+                   src={image.imageUrl}
+                   alt={image.description}
+                   caption={image.description}
+                   aspectRatio="video"
+                   className="h-full w-full"
+                />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+          <div className="text-center mt-8">
+            <Button asChild variant="outline" size="lg" className="border-primary/40 text-white hover:bg-primary/20">
+              <Link href="/gallery-contact">View Full Gallery & Media Archive</Link>
+            </Button>
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
       
       {/* Fighter Registration */}
-      <ScrollReveal direction="scale" delay={0.1}>
-        <section className="py-16 md:py-24" id="register">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <ScrollReveal direction="up" delay={0.2}>
-              <h2 className="text-center font-headline text-3xl md:text-5xl font-bold uppercase tracking-wider text-primary">Join the Ranks</h2>
-              <Separator className="w-24 h-1 mx-auto my-6 bg-primary" />
-              <p className="text-center text-muted-foreground text-lg mb-12">
-                Think you have what it takes to compete under the lights? Apply directly to the Apex Matchmaking Commission.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal direction="up" delay={0.3}>
-              <FighterRegistrationForm />
-            </ScrollReveal>
-          </div>
-        </section>
-      </ScrollReveal>
+      <section className="py-16 md:py-24" id="register">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <ScrollReveal direction="up" delay={0.1}>
+            <h2 className="text-center font-headline text-3xl md:text-5xl font-bold uppercase tracking-wider text-primary">Join the Ranks</h2>
+            <Separator className="w-24 h-1 mx-auto my-6 bg-primary" />
+            <p className="text-center text-muted-foreground text-lg mb-12">
+              Think you have what it takes to compete under the lights? Apply directly to the Apex Matchmaking Commission.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.15}>
+            <FighterRegistrationForm />
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* Sponsors Section */}
-      <ScrollReveal direction="up" delay={0.1}>
-        <section className="py-16 md:py-24 bg-black border-t border-primary/20 overflow-hidden">
-          <div className="container mx-auto px-4">
-            <ScrollReveal direction="scale" delay={0.2}>
-              <div className="text-center mb-10">
-                <span className="text-xs font-headline uppercase tracking-widest text-primary font-bold">
-                  Corporate Alliances & Partners
-                </span>
-                <h2 className="font-headline text-3xl md:text-5xl font-bold uppercase tracking-wider text-white mt-1">
-                  Official Global Partners
-                </h2>
-                <Separator className="w-24 h-1 mx-auto my-4 bg-primary" />
-              </div>
-            </ScrollReveal>
-            
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
-              {sponsors.map((sponsor) => (
-                <div 
-                  key={sponsor.name}
-                  className="bg-card/70 border border-primary/20 rounded-lg p-5 flex flex-col items-center justify-center text-center hover:border-primary transition-all duration-300 group hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
-                >
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-primary/80 mb-2">
-                    {sponsor.category}
-                  </span>
-                  <h4 className="font-headline text-lg font-black text-white uppercase group-hover:text-primary transition-colors">
-                    {sponsor.name}
-                  </h4>
-                  <span className="text-xs text-muted-foreground mt-1">
-                    {sponsor.badge}
-                  </span>
-                </div>
-              ))}
+      <section className="py-16 md:py-24 bg-black border-t border-primary/20 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <ScrollReveal direction="up" delay={0.1}>
+            <div className="text-center mb-10">
+              <span className="text-xs font-headline uppercase tracking-widest text-primary font-bold">
+                Corporate Alliances & Partners
+              </span>
+              <h2 className="font-headline text-3xl md:text-5xl font-bold uppercase tracking-wider text-white mt-1">
+                Official Global Partners
+              </h2>
+              <Separator className="w-24 h-1 mx-auto my-4 bg-primary" />
             </div>
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
+            {sponsors.map((sponsor) => (
+              <div 
+                key={sponsor.name}
+                className="bg-card/70 border border-primary/20 rounded-lg p-5 flex flex-col items-center justify-center text-center hover:border-primary transition-all duration-300 group hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] transform-gpu hover:-translate-y-1"
+              >
+                <span className="text-[10px] uppercase font-mono tracking-widest text-primary/80 mb-2">
+                  {sponsor.category}
+                </span>
+                <h4 className="font-headline text-lg font-black text-white uppercase group-hover:text-primary transition-colors">
+                  {sponsor.name}
+                </h4>
+                <span className="text-xs text-muted-foreground mt-1">
+                  {sponsor.badge}
+                </span>
+              </div>
+            ))}
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
     </div>
   );
 }

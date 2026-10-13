@@ -1,8 +1,11 @@
 "use client";
 
-import { useEffect, useRef, ReactNode } from 'react';
+import { useRef, ReactNode } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { cn } from '@/lib/utils';
+
+// Ultra-smooth quintic ease-out curve (smooth deceleration, zero abrupt jank)
+const SMOOTH_EASE = [0.16, 1, 0.3, 1];
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -16,31 +19,33 @@ export function ScrollReveal({
   children, 
   direction = 'up', 
   delay = 0, 
-  duration = 0.6,
+  duration = 0.65,
   className = '' 
 }: ScrollRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  // Trigger smoothly just as the element enters view without leaving blank holes
+  const isInView = useInView(ref, { once: true, margin: "-30px" });
 
+  // Soft, refined displacements that prevent harsh layout jumps
   const variants = {
     up: {
-      hidden: { opacity: 0, y: 75 },
+      hidden: { opacity: 0, y: 24 },
       visible: { opacity: 1, y: 0 }
     },
     down: {
-      hidden: { opacity: 0, y: -75 },
+      hidden: { opacity: 0, y: -24 },
       visible: { opacity: 1, y: 0 }
     },
     left: {
-      hidden: { opacity: 0, x: -75 },
+      hidden: { opacity: 0, x: -28 },
       visible: { opacity: 1, x: 0 }
     },
     right: {
-      hidden: { opacity: 0, x: 75 },
+      hidden: { opacity: 0, x: 28 },
       visible: { opacity: 1, x: 0 }
     },
     scale: {
-      hidden: { opacity: 0, scale: 0.8 },
+      hidden: { opacity: 0, scale: 0.96 },
       visible: { opacity: 1, scale: 1 }
     },
     fade: {
@@ -58,9 +63,9 @@ export function ScrollReveal({
       transition={{ 
         duration, 
         delay,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: SMOOTH_EASE
       }}
-      className={className}
+      className={cn("transform-gpu will-change-[opacity,transform]", className)}
     >
       {children}
     </motion.div>
@@ -73,17 +78,17 @@ interface ParallaxScrollProps {
   className?: string;
 }
 
-export function ParallaxScroll({ children, speed = 0.5, className = '' }: ParallaxScrollProps) {
+export function ParallaxScroll({ children, speed = 0.3, className = '' }: ParallaxScrollProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, speed * 100]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, speed * 60]);
 
   return (
-    <motion.div ref={ref} style={{ y }} className={className}>
+    <motion.div ref={ref} style={{ y }} className={cn("transform-gpu will-change-transform", className)}>
       {children}
     </motion.div>
   );
@@ -95,9 +100,9 @@ interface StaggerContainerProps {
   className?: string;
 }
 
-export function StaggerContainer({ children, staggerDelay = 0.1, className = '' }: StaggerContainerProps) {
+export function StaggerContainer({ children, staggerDelay = 0.08, className = '' }: StaggerContainerProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "-20px" });
 
   return (
     <motion.div
@@ -122,17 +127,17 @@ export function StaggerItem({ children, className = '' }: { children: ReactNode;
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 18 },
         visible: { 
           opacity: 1, 
           y: 0,
           transition: {
-            duration: 0.5,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            duration: 0.55,
+            ease: SMOOTH_EASE
           }
         }
       }}
-      className={className}
+      className={cn("transform-gpu will-change-[opacity,transform]", className)}
     >
       {children}
     </motion.div>
@@ -141,9 +146,10 @@ export function StaggerItem({ children, className = '' }: { children: ReactNode;
 
 interface ScrollProgressBarProps {
   color?: string;
+  className?: string;
 }
 
-export function ScrollProgressBar({ color = 'hsl(var(--primary))', className = '' }: { color?: string; className?: string }) {
+export function ScrollProgressBar({ color = 'hsl(var(--primary))', className = '' }: ScrollProgressBarProps) {
   const { scrollYProgress } = useScroll();
 
   return (
@@ -154,7 +160,7 @@ export function ScrollProgressBar({ color = 'hsl(var(--primary))', className = '
         height: '2px',
         background: color,
       }}
-      className={cn("fixed top-0 left-0 right-0 z-[9999]", className)}
+      className={cn("fixed top-0 left-0 right-0 z-[9999] transform-gpu will-change-transform", className)}
     />
   );
 }
@@ -165,18 +171,18 @@ interface FloatingElementProps {
   className?: string;
 }
 
-export function FloatingElement({ children, intensity = 20, className = '' }: FloatingElementProps) {
+export function FloatingElement({ children, intensity = 8, className = '' }: FloatingElementProps) {
   return (
     <motion.div
       animate={{
         y: [0, -intensity, 0],
       }}
       transition={{
-        duration: 3,
+        duration: 4.5,
         repeat: Infinity,
         ease: "easeInOut"
       }}
-      className={className}
+      className={cn("transform-gpu will-change-transform", className)}
     >
       {children}
     </motion.div>
@@ -199,7 +205,7 @@ export function RotateOnScroll({ children, rotations = 1, className = '' }: Rota
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 360 * rotations]);
 
   return (
-    <motion.div ref={ref} style={{ rotate }} className={className}>
+    <motion.div ref={ref} style={{ rotate }} className={cn("transform-gpu will-change-transform", className)}>
       {children}
     </motion.div>
   );
@@ -211,7 +217,7 @@ interface ScaleOnScrollProps {
   className?: string;
 }
 
-export function ScaleOnScroll({ children, scaleRange = [0.8, 1], className = '' }: ScaleOnScrollProps) {
+export function ScaleOnScroll({ children, scaleRange = [0.92, 1], className = '' }: ScaleOnScrollProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -221,7 +227,7 @@ export function ScaleOnScroll({ children, scaleRange = [0.8, 1], className = '' 
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [scaleRange[0], 1, scaleRange[1]]);
 
   return (
-    <motion.div ref={ref} style={{ scale }} className={className}>
+    <motion.div ref={ref} style={{ scale }} className={cn("transform-gpu will-change-transform", className)}>
       {children}
     </motion.div>
   );

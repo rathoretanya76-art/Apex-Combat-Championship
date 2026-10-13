@@ -28,8 +28,8 @@ const DivisionCard = React.forwardRef<HTMLDivElement, DivisionCardProps>(
         >
           {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center 
-                       transition-transform duration-700 ease-out group-hover:scale-110 grayscale group-hover:grayscale-0"
+            className="absolute inset-0 bg-cover bg-center transform-gpu will-change-transform 
+                       transition-transform duration-500 ease-out group-hover:scale-105 grayscale group-hover:grayscale-0"
             style={{ backgroundImage: `url(${imageUrl})` }}
           />
 
